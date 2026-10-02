@@ -4,8 +4,8 @@
 class Gloss < Formula
   desc "Review a running web app in a browser and hand the comments to Claude"
   homepage "https://github.com/ryanbrunner/gloss"
-  url "https://github.com/ryanbrunner/gloss/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "91948dff34ea4c8a0f308850782107d5a0649ec6c9cb921961f66de8d29d3bf8"
+  url "https://github.com/ryanbrunner/gloss/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "6ef624819d78a51c39a342734a453b09e7a10f979aac7abf14a112da4d7866b1"
   license "MIT"
 
   depends_on "node"
