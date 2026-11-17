@@ -2,8 +2,8 @@
 # version and sha256 for each release and pushes the result to the tap.
 # Change it here: the tap's copy is overwritten.
 cask "reeve" do
-  version "0.1.2"
-  sha256 "199ad4277482285da40dc854504ec21359dfd79824f6820cbf0bf332b8ba42c0"
+  version "0.1.3"
+  sha256 "cda4c7895091be3a6f970915340fec3dd7f2c8a34274c6067a00e41db051a64f"
 
   url "https://github.com/ryanbrunner/reeve-terminal/releases/download/v#{version}/Reeve.zip"
   name "Reeve"
