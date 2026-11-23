@@ -4,8 +4,8 @@
 class Gloss < Formula
   desc "Review a running web app in a browser and hand the comments to Claude"
   homepage "https://github.com/ryanbrunner/gloss"
-  url "https://github.com/ryanbrunner/gloss/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "6ef624819d78a51c39a342734a453b09e7a10f979aac7abf14a112da4d7866b1"
+  url "https://github.com/ryanbrunner/gloss/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "ef2d10954702f92849e1e3ef50f7837577f81144c4f91ad1da3500224fa56bf3"
   license "MIT"
 
   depends_on "node"
@@ -18,10 +18,21 @@ class Gloss < Formula
   end
 
   def caveats
-    <<~EOS
+    s = <<~EOS
       Gloss drives a Chromium of its own. Download it once (about 150 MB,
-      into Playwright's cache, ~/Library/Caches/ms-playwright on macOS):
+      into Playwright's cache: ~/Library/Caches/ms-playwright on macOS,
+      ~/.cache/ms-playwright on Linux):
         gloss install-chromium
+    EOS
+    s += <<~EOS if OS.linux?
+
+      Chromium also needs system libraries this formula does not install.
+      To install them along with it (apt, via sudo), run instead:
+        gloss install-chromium --with-deps
+      That is also the fix if `gloss open` cannot launch it after a plain
+      install.
+    EOS
+    s + <<~EOS
 
       To run reviews from Claude Code, add the plugin there:
         /plugin marketplace add ryanbrunner/gloss
